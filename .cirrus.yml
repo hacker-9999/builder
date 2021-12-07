@@ -1,0 +1,27 @@
+environment: 
+    CIRRUS_CLONE_DEPTH: 1
+    CIRRUS_WORKING_DIR: "/tmp/ci" 
+
+    rclone: "ENCRYPTED[0cc384626f942428470b56ed42223243612101f1167fd73b65025570d09abeabc49b62bbbbef5979baadc3d78dd5998a]"
+    token: "ENCRYPTED[3d550e5e7210b7b55f6aae5679e135dbf1af3d6e5eb8bb9866606d75f76b1cb53e54c96fad67a928acd0aa828c61dcc4]"
+task:
+    name: juice-roms 
+    timeout_in: 120m 
+    container:
+      image: aseelsathar/doc:latest 
+      cpu: 8 
+      memory: 32G 
+    cc_background_script:
+     - ./cc
+#    cd_background_script: 
+#     - ./cd 
+    ss_script: 
+      - ./ss 
+    mo_background_script:
+      - ./mo
+    br_script: 
+      - ./br 
+#    bu_background_script:
+#      - ./bu
+    cu_script:
+      - ./cu

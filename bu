@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#tg
+tg(){
+	bot_api=$token
+	your_telegram_id=$1
+	msg=$2
+	curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" --data "text=$msg&chat_id=${your_telegram_id}&parse_mode=html"
+}
+id=272503335
+
+#uploads
+
+cd /tmp
+
+#up(){
+#       curl --upload-file $1 https://transfer.sh/$(basename $1);>
+#       # 14 days, 10 GB limit
+#}
+
+time rclone copy /tmp/rom/out/target/product/juice/Pixel*zip juice:PE -P
+tg $id "juice Compile Status(PE12): \`Build uploaded!\`
+Finished at:- \`$(date)\`."

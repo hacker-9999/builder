@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd /tmp
+time rclone copy juice:/pe12ccache/ccache.tar.gz /tmp
+time tar xf ccache.tar.gz
+time rm -rf ccache.tar.gz
