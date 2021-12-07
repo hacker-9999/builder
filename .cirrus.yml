@@ -13,8 +13,8 @@ task:
       memory: 32G 
     cc_background_script:
      - ./cc
-#    cd_background_script: 
-#     - ./cd 
+    cd_background_script: 
+     - ./cd 
     ss_script: 
       - ./ss 
     mo_background_script:
