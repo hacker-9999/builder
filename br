@@ -7,7 +7,7 @@ lunch aosp_juice-user
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-ccache -M 20G
+ccache -M 50G
 ccache -o compression=true
 ccache -z
 
@@ -22,7 +22,7 @@ id=272503335 # Your telegram id
 tg $id "juice ROM Compile Status(Pe-12): STARTED!.
 Started at:- $(date)."
 
-mka bacon -j8 &
+mka bacon -j$(nproc --all) &
 sleep 100m
 kill %1
 ccache -s
