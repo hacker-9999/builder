@@ -22,13 +22,13 @@ id=272503335 # Your telegram id
 tg $id "juice ROM Compile Status(Pe-12): STARTED!.
 Started at:- $(date)."
 
-mka bacon -j$(nproc --all) &
-sleep 100m
-kill %1
+mka bacon -j$(nproc --all) #&
+#sleep 100m
+#kill %1
 ccache -s
 
 
-#tg $id "juice Compile Status(Pe-12): \`FINISHED!\`
-#Finished at:- \`$(date)\`.
-#CCache Stats:-
-#\`$(ccache -s | sed -n -e "6,9 p" -e "9 q")\`"
+tg $id "juice Compile Status(Pe-12): \`FINISHED!\`
+Finished at:- \`$(date)\`.
+CCache Stats:-
+\`$(ccache -s | sed -n -e "6,9 p" -e "9 q")\`"

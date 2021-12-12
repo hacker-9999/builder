@@ -21,7 +21,7 @@ task:
       - ./mo
     br_script: 
       - ./br 
-#    bu_background_script:
-#      - ./bu
+    bu_background_script:
+      - ./bu
     cu_script:
       - ./cu
